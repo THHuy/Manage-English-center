@@ -1,0 +1,23 @@
+const express = require("express");
+const router = express.Router();
+const teacherController = require("../app/controllers/teacherController");
+
+router.get("/", teacherController.teacher);
+router.get("/information", teacherController.information);
+router.get("/division", teacherController.division);
+router.get("/formAddTeacher", teacherController.formAddTeacher);
+router.post("/addTeacher", teacherController.addTeacher);
+router.get("/updateTeacher", teacherController.formUpdateTeacher);
+router.put("/updateT", teacherController.updateTeacher);
+router.get("/deleteList", teacherController.deleteList);
+router.put("/deleled", teacherController.deteledTeacher);
+router.patch("/restore", teacherController.restoreTeacher);
+router.get("/divisionList", teacherController.getAssign);
+router.get("/create_users", teacherController.create_users);
+router.post("/created_post", teacherController.created_post);
+router.get("/users_list", teacherController.users_list);
+router.get("/users_update", teacherController.users_update);
+router.put("/update_put", teacherController.update_put);
+router.delete("/deleted_users", teacherController.deleted_users);
+router.delete("/deleted_assign", teacherController.deleted_assign);
+module.exports = router;

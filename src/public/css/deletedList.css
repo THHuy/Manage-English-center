@@ -1,0 +1,27 @@
+.table-content th {
+  text-align: center;
+  border: 2px solid;
+}
+.table-data td {
+  border: 2px solid;
+  padding: 5px 2px;
+}
+.table-data td a {
+  text-decoration: none;
+  color: black;
+  padding: 5px 0px;
+}
+.table-data .restoredata {
+  position: relative;
+  left: 30%;
+  background-color: #65ff65;
+  padding: 5px;
+  border-radius: 10px;
+}
+.table-data .btn-restore :hover{
+    cursor: pointer;
+    color: #ffffff;
+}
+.table-data .delete-data {
+  background-color: #ff3300;
+}

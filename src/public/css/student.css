@@ -1,0 +1,26 @@
+
+
+.table-data .update-data {
+  background-color: #33ff33;
+}
+.table-data .delete-data {
+  background-color: #ff3300;
+}
+.btn {
+  margin-top: 10px;
+}
+#addStudentBtn {
+  position: absolute;
+  right: 0;
+}
+#deletedStudentBtn {
+  position: absolute;
+  right: 150px;
+}
+.page a {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 20px ;
+}

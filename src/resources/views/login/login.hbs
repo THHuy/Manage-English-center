@@ -1,0 +1,29 @@
+<header>
+    <link rel="stylesheet" href="/css/login.css">
+</header>
+<body style="display:flex; align-items:center; justify-content:center;">
+    <div class="login-page">
+        <div class="form">
+            <form class="login-form" method="post" action="/login/check">
+                <h2><i class="fas fa-lock"></i> Login</h2>
+                <input type="text" placeholder="Username" name="usersname" required />
+                <input type="password" placeholder="Password" name="password" required />
+                <button type="submit">login</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/login.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Kiểm tra xem modal có phải là modal lỗi không, nếu có hiển thị nó
+            {{#if error}}
+                Swal.fire({
+                icon: "error",
+                title: "Lỗi đăng nhập",
+                text: "Sai tài khoản hoặc mật khẩu"
+                });
+            {{/if}}
+        });
+    </script> 
+</body>

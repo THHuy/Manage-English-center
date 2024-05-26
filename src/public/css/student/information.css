@@ -1,0 +1,30 @@
+.class-info {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  max-width: 70%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto; /* Căn giữa */
+}
+
+.class-info-row {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.class-info-item {
+  flex: 1;
+}
+.class-info-item ul li {
+  list-style: none;
+}
+.class-info-label {
+  font-weight: bold;
+  color: #333;
+}
+
+.class-info-value {
+  color: #555;
+}

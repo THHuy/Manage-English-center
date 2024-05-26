@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=FAMILY_NAME:wght@WEIGHT_OR_RANGE&display=swap");
+* {
+  margin: 0;
+
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Catamaran", sans-serif;
+}
+.footer {
+  width: 100%;
+  padding: 0px 20px 0px 20px;
+}
+.newsletter {
+  display: flex;
+  width: 100%;
+
+  position: relative;
+  top: 60px;
+
+  max-width: 1000px;
+  margin: auto;
+
+  background-color: #303035;
+  justify-content: space-around;
+
+  align-items: center;
+  padding: 20px 15px;
+
+  border-radius: 10px;
+}
+.newsletter-left h2 {
+  color: #ffffff; /* Đặt màu chữ là trắng */
+  text-transform: uppercase; /* Chuyển đổi văn bản thành chữ hoa */
+  font-size: 1rem; /* Đặt kích thước phông chữ là 1 đơn vị em */
+  opacity: 0.5; /* Đặt độ mờ là 0,5 */
+  letter-spacing: 1px; /* Đặt khoảng cách chữ là 1 pixel */
+}
+.newsletter-left h1 {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+.newsletter-right {
+  width: 500px;
+}
+.newsletter-input {
+  background-color: #ffffff;
+  padding: 5px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.newsletter-input input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 80%;
+  padding-left: 10px;
+  font-weight: 600;
+}
+
+.footer-content {
+  background-color: black;
+  padding: 100px 40px 40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-main{
+    margin: 10px 20px;
+}
+.footer-main h2{
+    color: #ffffff;
+    font-size: 1.6rem;
+}
+.footer-main p {
+    color: #ffffff;
+    font-size: 0.8rem;
+    line-height: 1.3rem;
+}
+.social-links{
+    margin: 15px 0px;
+    display: flex;
+    gap: 8px;
+}
+.social-links a{
+    padding: 5px;
+    background-color: #dbd8e3;
+    border-radius: 5px;
+    transition: 0.5s;
+    text-decoration: none;
+}
+.social-links a{
+    opacity: 0.7;
+}
+.social-links a i{
+    margin: 2px;
+    font-size: 1.1rem;
+    color: #201e1e;
+}
+.links{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin: 40px 20px;
+}
+.links p{
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #ffffff;
+}
+.links a{
+    font-size: 0.8rem;
+    text-decoration: none;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #dbd8e3;
+    transition: 0.5s all;
+}
+.links a:hover{
+    color: #303035;
+}

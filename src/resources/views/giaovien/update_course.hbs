@@ -1,0 +1,173 @@
+<header>
+    <link rel="stylesheet" href="/css/course.css">
+    <style>
+        .card-text {
+  display: -webkit-box;
+  max-height: 3.2rem;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  -webkit-line-clamp: 2;
+  line-height: 1.6rem;
+}
+    </style>
+</header>
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sidebars</title>
+        <link rel="stylesheet" href="styles copy.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+            rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,0" />
+        <link
+            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet" />
+        <script src="https://unpkg.com/akar-icons-fonts"></script>
+        <style>
+            a{
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="nav-conteiner">
+            <div class="user">
+                <i class="fa-regular fa-user"></i>
+                <p> Xin chào {{user}}</p>
+            </div>
+        </div>
+        <aside class="sidebar">
+            <header>
+                <button
+                    type="button"
+                    className="sidebar-burger"
+                    onClick="toggleSidebar()">
+                    <i class="ai-three-line-horizontal"></i>
+                </button>
+
+            </header>
+            <ul>
+                <li>
+                    <a href="/giaovien">
+                        <button type="button" onclick="onClick(this)">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <p>Thời khóa biểu</p>
+                        </button>
+                    </a>
+                </li>
+                <li>
+                    <a href="/giaovien/blog/">
+                        <button type="button" onclick="onClick(this)">
+                            <i class="ai-dashboard"></i>
+                            <p>Quản lí Blog</p>
+                        </button>
+                    </a>
+                </li>
+                <li>
+                    <a href="/giaovien/course">
+                        <button type="button" onclick="onClick(this)">
+                            <i class="fa-brands fa-discourse"></i>
+                            <p>Khóa học</p>
+                        </button>
+                    </a>
+                </li>
+                <li>
+                    <a href="/giaovien/class">
+                        <button type="button" onclick="onClick(this)">
+                            <i class="fa-solid fa-landmark"></i>
+                            <p>Thông tin lớp học</p>
+                        </button>
+                    </a>
+                </li>
+                <li>
+                    <a href="/giaovien/score">
+                        <button type="button" onclick="onClick(this)">
+                            <i class="fa-solid fa-pencil"></i>
+                            <p>Điểm thi</p>
+                        </button>
+                    </a>
+                </li>
+                <li>
+                    <a href="/giaovien/attend">
+                        <button type="button" onclick="onClick(this)">
+                            <i class="fa-regular fa-calendar"></i>
+                            <p>Điểm danh</p>
+                        </button>
+                    </a>
+                </li>
+                <li>
+                    <a href="/login/logout">
+                        <button type="button" onclick="onClick(this)">
+                            <i class="ai-lock-on"></i>
+                            <p>Đăng xuất</p>
+                        </button>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <div id="content">
+            <form id="formUpdatedCourse" method="post">
+                {{#each course}}
+                <div class="input-group mb-3">
+                    <span class="input-group-text"
+                        id="basic-addon1">Title</span>
+                    <input name="title" type="text" class="form-control"
+                        placeholder="Tên Khóa học" aria-label="Username"
+                        aria-describedby="basic-addon1"
+                        value="{{this.title}}">
+                </div>
+                <div class="mb-3">
+                    <label for="basic-url" class="form-label">Link khóa
+                        học(URL)</label>
+                    <div class="input-group">
+                        <span class="input-group-text"
+                            id="basic-addon3">https://www.youtube.com/watch?v=tGn_qMFBQgg</span>
+                        <input type="text" class="form-control"
+                            id="basic-url" name="link"
+                            aria-describedby="basic-addon3 basic-addon4"
+                            value="{{this.link}}">
+                    </div>
+                    <div class="form-text" id="basic-addon4">Example help
+                        text goes outside
+                        the input group.</div>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Mô tả</span>
+                    <textarea type="text" class="form-control"
+                        name="mota">{{this.mota}}</textarea>
+                </div>
+                <button id="btn-updated" type="button" class="btn btn-primary"
+                    data-id="{{this.idcourse}}">Sửa khóa học</button>
+                {{/each}}
+            </form>
+        </div>
+        <script src="main.js"></script>
+    </body>
+</html>
+<script src="/js/modalSwal.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+        $(document).ready(function() {
+            // Kiểm tra xem modal có phải là modal lỗi không, nếu có hiển thị nó
+            {{#if success}}
+                Swal.fire({
+                icon: "success",
+                title: "Sửa khóa học",
+                text: "Thành công"
+                });
+            {{/if}}
+        });
+    </script>

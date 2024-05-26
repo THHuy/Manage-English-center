@@ -1,0 +1,267 @@
+<header>
+    <link rel="stylesheet" href="/css/deletedList.css">
+</header>
+
+<html>
+    <head>
+        <style>
+        .alert {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+        .alert-success {
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+        .alert-danger {
+            color: #721c24;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+        }
+    </style>
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="/css/create.css">
+    </head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sidebars</title>
+        <link rel="stylesheet" href="styles copy.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+            rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,0" />
+        <link
+            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet" />
+        <script src="https://unpkg.com/akar-icons-fonts"></script>
+        <style>
+            a{
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="nav-conteiner">
+            <div class="user">
+                <i class="fa-regular fa-user"></i>
+                <p> Xin chào {{user}}</p>
+            </div>
+        </div>
+        <aside class="sidebar">
+            <header>
+                <button
+                    type="button"
+                    className="sidebar-burger"
+                    onClick="toggleSidebar()">
+                    <i class="ai-three-line-horizontal"></i>
+                </button>
+                <p class="navbar">Quản lí trung tâm</p>
+            </header>
+            <ul>
+                <li>
+                    <a href="/quanli">
+                        <button type="button" onclick="onClick(this)">
+                            <i class="ai-home-alt1"></i>
+                            <p>Trang chủ</p>
+                        </button>
+                    </a>
+                </li>
+                <li>
+                    <a href="/blog">
+                        <button type="button" onclick="onClick(this)">
+                            <i class="ai-dashboard"></i>
+                            <p>Quản lí Blog</p>
+                        </button>
+                    </a>
+                </li>
+                <li>
+                    <button type="button" onclick="onClick(this)">
+                        <i class="ai-person"></i>
+                        <p>Học viên</p>
+                        <i class="ai-chevron-down-small"></i>
+                    </button>
+                    <div class="sub-menu">
+                        <ul>
+                            <li>
+                                <a href="/student"><button
+                                        type="button">Quản lí
+                                        học viên</button></a>
+                            </li>
+                            <li>
+                                <a href="/student/reserve"><button
+                                        type="button">Bảo
+                                        lưu</button></a>
+                            </li>
+                            <li>
+                                <a href="/student/advise">
+                                    <button type="button">Tư
+                                        vấn({{newcount}})</button>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <button type="button" onclick="onClick(this)">
+                        <i class="fa-solid fa-landmark"></i>
+                        <p>Lớp học</p>
+                        <i class="ai-chevron-down-small"></i>
+                    </button>
+                    <div class="sub-menu">
+                        <ul>
+                            <li>
+                                <a href="/class/creatClass">
+                                    <button type="button">Tạo lớp học
+                                    </button>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/class/arrangenClass">
+                                    <button type="button">Xếp
+                                        lớp</button>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/class">
+                                    <button type="button">Thông tin lớp
+                                        học</button>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/class/score">
+                                    <button type="button">Điểm
+                                        thi</button>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/class/changeClass">
+                                    <button type="button">Chuyển
+                                        lớp</button>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/class/attend">
+                                    <button type="button">Điểm
+                                        danh</button>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <button type="button" onclick="onClick(this)">
+                        <i class="ai-person"></i>
+                        <p>Giáo viên</p>
+                        <i class="ai-chevron-down-small"></i>
+                    </button>
+                    <div class="sub-menu">
+                        <ul>
+                            <li>
+                                <a href="/teacher">
+                                    <button type="button">Quản lí giáo
+                                        viên</button>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/teacher/division">
+                                    <button type="button">Phân
+                                        công</button>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="/course/listCourse">
+                        <button type="button" onclick="onClick(this)">
+                            <i class="fa-brands fa-discourse"></i>
+                            <p>Khóa học</p>
+                        </button>
+                    </a>
+                </li>
+                <li>
+                    <a href="/fee">
+                        <button type="button" onclick="onClick(this)">
+                            <i class="fa-solid fa-money-bill"></i>
+                            <p>Học phí</p>
+                        </button>
+                    </a>
+                </li>
+                <li>
+                    <a href="/login/logout">
+                        <button type="button" onclick="onClick(this)">
+                            <i class="ai-lock-on"></i>
+                            <p>Đăng xuất</p>
+                        </button>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <div id="content">
+            <a href="/teacher/formAddTeacher" class="btn btn-primary">Thêm
+                Giáo viên</a>
+            <a href="/teacher/deleteList" class="btn btn-primary">Giáo viên
+                đã xóa</a>
+            <a href="/teacher/create_users" class="btn btn-primary">Tạo tài
+                khoản</a>
+            <a href="/teacher/users_list" class="btn btn-primary">Danh sách tài
+                khoản</a>
+            {{#each results}}
+            <form id="update_form" method="post"
+                action="/teacher/created_post">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Tên đăng nhập</label>
+                    <input type="text" class="form-control"
+                        id="exampleInputEmail1"
+                        placeholder="Tên đăng nhập" name="usersname"
+                        value="{{this.usersname}}">
+                </div>
+                <div class="form-group">
+                    <label for="magv">Mã giáo viên</label>
+                    <input type="text" class="form-control"
+                        id="magv"
+                        placeholder="Mã giáo viên" name="magv"
+                        value="{{this.magv}}">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="text" class="form-control"
+                        id="exampleInputPassword1" name="pass"
+                        value="{{this.pass}}"
+                        placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label>Chức vụ: {{this.roles}}</label>
+                </div>
+                <button type="button" id="btn_submit"
+                    class="btn btn-primary">Sửa tài khoản</button>
+            </form>
+            {{/each}}
+        </div>
+        <script src="main.js"></script>
+    </body>
+    <script src="/js/teacher/update.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Kiểm tra xem modal có phải là modal lỗi không, nếu có hiển thị nó
+            {{#if success}}
+                Swal.fire({
+                icon: "success",
+                title: "Sửa tài khoản",
+                text: "Thành công"
+                });
+            {{/if}}
+        });
+    </script>
+</html>

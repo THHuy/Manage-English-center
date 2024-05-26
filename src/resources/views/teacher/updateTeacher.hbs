@@ -1,0 +1,311 @@
+
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="/css/teacher.css">
+    </head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sidebars</title>
+        <link rel="stylesheet" href="styles copy.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+            rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,0" />
+        <link
+            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet" />
+        <script src="https://unpkg.com/akar-icons-fonts"></script>
+        <style>
+            a{
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="nav-conteiner">
+            <div class="user">
+                <i class="fa-regular fa-user"></i>
+                <p> Xin chào {{user}}</p>
+            </div>
+        </div>
+        <aside class="sidebar">
+            <header>
+                <button
+                    type="button"
+                    className="sidebar-burger"
+                    onClick="toggleSidebar()">
+                    <i class="ai-three-line-horizontal"></i>
+                </button>
+                <p class="navbar">Quản lí trung tâm</p>
+            </header>
+            <ul>
+                <li>
+                    <a href="/quanli">
+                        <button type="button" onclick="onClick(this)">
+                            <i class="ai-home-alt1"></i>
+                            <p>Trang chủ</p>
+                        </button>
+                    </a>
+                </li>
+                <li>
+                    <a href="/blog">
+                        <button type="button" onclick="onClick(this)">
+                            <i class="ai-dashboard"></i>
+                            <p>Quản lí Blog</p>
+                        </button>
+                    </a>
+                </li>
+                <li>
+                    <button type="button" onclick="onClick(this)">
+                        <i class="ai-person"></i>
+                        <p>Học viên</p>
+                        <i class="ai-chevron-down-small"></i>
+                    </button>
+                    <div class="sub-menu">
+                        <ul>
+                            <li>
+                                <a href="/student"><button
+                                        type="button">Quản lí
+                                        học viên</button></a>
+                            </li>
+                            <li>
+                                <a href="/student/reserve"><button
+                                        type="button">Bảo
+                                        lưu</button></a>
+                            </li>
+                            <li>
+                                <a href="/student/advise">
+                                    <button type="button">Tư
+                                        vấn({{newcount}})</button>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <button type="button" onclick="onClick(this)">
+                        <i class="fa-solid fa-landmark"></i>
+                        <p>Lớp học</p>
+                        <i class="ai-chevron-down-small"></i>
+                    </button>
+                    <div class="sub-menu">
+                        <ul>
+                            <li>
+                                <a href="/class/creatClass">
+                                    <button type="button">Tạo lớp học
+                                    </button>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/class/arrangenClass">
+                                    <button type="button">Xếp
+                                        lớp</button>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/class">
+                                    <button type="button">Thông tin lớp
+                                        học</button>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/class/score">
+                                    <button type="button">Điểm
+                                        thi</button>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/class/changeClass">
+                                    <button type="button">Chuyển
+                                        lớp</button>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/class/attend">
+                                    <button type="button">Điểm
+                                        danh</button>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <button type="button" onclick="onClick(this)">
+                        <i class="ai-person"></i>
+                        <p>Giáo viên</p>
+                        <i class="ai-chevron-down-small"></i>
+                    </button>
+                    <div class="sub-menu">
+                        <ul>
+                            <li>
+                                <a href="/teacher">
+                                    <button type="button">Quản lí giáo
+                                        viên</button>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/teacher/division">
+                                    <button type="button">Phân
+                                        công</button>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="/course/listCourse">
+                        <button type="button" onclick="onClick(this)">
+                            <i class="fa-brands fa-discourse"></i>
+                            <p>Khóa học</p>
+                        </button>
+                    </a>
+                </li>
+                <li>
+                    <a href="/fee">
+                        <button type="button" onclick="onClick(this)">
+                            <i class="fa-solid fa-money-bill"></i>
+                            <p>Học phí</p>
+                        </button>
+                    </a>
+                </li>
+                <li>
+                    <a href="/login/logout">
+                        <button type="button" onclick="onClick(this)">
+                            <i class="ai-lock-on"></i>
+                            <p>Đăng xuất</p>
+                        </button>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <div id="content">
+
+            <div class="teacher-page">
+                <div class="form">
+                    <h2>Thông tin</h2>
+                    {{#each teacher}}
+                    <form method="POST"
+                        action="/teacher/updateT/?magv={{this.magv}}&_method=PUT">
+                        <p>Họ và tên *</p>
+                        <input type="text" placeholder="Họ và tên *"
+                            name="fullname"
+                            value="{{this.fullname}}">
+                        <p>Chọn giới tính</p>
+                        <select name="gt">
+                            <option class="gioitinh" value="{{this.gt}}"
+                                selected>{{this.gt}}</option>
+                            <option value="nam">Nam</option>
+                            <option value="nu">Nữ</option>
+                        </select>
+                        <p>Số điện thoại</p>
+                        <input value="{{this.phone}}" type="text"
+                            name="phone"
+                            placeholder="Số điện thoại*">
+                        <p>Địa chỉ</p>
+                        <input value="{{this.dc}}" type="text" name="dc"
+                            placeholder="Địa chỉ">
+                        <p>Email</p>
+                        <input value="{{this.email}}" type="text"
+                            name="email"
+                            placeholder="Email">
+                        <p>Chọn kỹ năng dạy</p>
+                        <input type="hidden" name="skilled"
+                            value="{{this.skill}}">
+                        <div class="row skill">
+                            <div class="col-6">
+                                <input type="checkbox" name="skill"
+                                    value="TOIEC">TOIEC
+                            </div>
+                            <div class="col-6">
+                                <input type="checkbox" name="skill"
+                                    value="TOIEC 450">TOIEC 450
+                            </div>
+                            <div class="col-6">
+                                <input type="checkbox" name="skill"
+                                    value="TOIEC 600">TOIEC 600
+                            </div>
+                            <div class="col-6">
+                                <input type="checkbox" name="skill"
+                                    value="TOIEC 750">TOIEC 750
+                            </div>
+                            <div class="col-6">
+                                <input type="checkbox" name="skill"
+                                    value="IELTS">IELTS
+                            </div>
+                            <div class="col-6">
+                                <input type="checkbox" name="skill"
+                                    value="B1">B1
+                            </div>
+                            <div class="col-6">
+                                <input type="checkbox" name="skill"
+                                    value="B2">B2
+                            </div>
+                            <div class="col-6">
+                                <input type="checkbox" name="skill"
+                                    value="C1">C1
+                            </div>
+                            <div class="col-6"><input type="checkbox"
+                                    name="skill"
+                                    value="C2">C2</div>
+                        </div>
+                        <p>Trường đã tốt nghiệp</p>
+                        <input value="{{this.school}}" type="text"
+                            name="school"
+                            placeholder="Trường đã tốt nghiệp">
+                        <p>Ngày sinh</p>
+                        <input id="birthdayInput" type="date"
+                            name="birthday">
+                        <button type="submit" class="btn btn-primary">Sửa giáo
+                            viên</button>
+                    </form>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        <script src="main.js"></script>
+    </body>
+    <script>
+        // Giá trị ngày tháng năm sẵn có
+        {{#each teacher}}
+        var predefinedDate = "{{this.birthday}}";
+        {{/each }}
+        // Hàm chuyển đổi từ định dạng date string sang yyyy-mm-dd
+        function convertDateString(dateString) {
+            var date = new Date(dateString);
+            var year = date.getFullYear();
+            var month = ('0' + (date.getMonth() + 1)).slice(-2); // Tháng bắt đầu từ 0
+            var day = ('0' + date.getDate()).slice(-2);
+            return year + '-' + month + '-' + day;
+        }
+
+        // Chuyển đổi ngày tháng năm
+        var formattedDate = convertDateString(predefinedDate);
+
+        // Lấy phần tử input bằng ID
+        var dateInput = document.getElementById('birthdayInput');
+
+        // Gán giá trị đã chuyển đổi vào input
+        dateInput.value = formattedDate;
+    </script>
+    <script>
+    const sex = document.querySelectorAll('.gioitinh')
+    sex.forEach((e)=>{
+        const name = e.innerText
+        if(name === 'nam'){
+            e.innerText = 'Nam'
+        }
+        else{
+            e.innerText = 'Nữ'
+        }
+    })
+</script>
+
+</html>

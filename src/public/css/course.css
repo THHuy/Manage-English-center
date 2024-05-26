@@ -1,0 +1,33 @@
+img {
+  width: 100%;
+}
+.card-text {
+  display: -webkit-box;
+  max-height: 3.2rem;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  -webkit-line-clamp: 2;
+  line-height: 1.6rem;
+}
+
+#content #addBtn{
+    position:  absolute;
+    right: 0;
+    margin: 20px;
+}
+
+
+.mt4{
+    position: relative;
+    display: inline-block;
+    top: 50px;
+}
+.card{
+    width: 300px;
+    border-radius: 10px;
+}
+.btn-deleted{
+    margin: 10px 10px 10px 70px;
+}

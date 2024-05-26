@@ -1,0 +1,106 @@
+#content {
+  display: flex; /* Sử dụng flexbox cho layout */
+  flex-direction: column; /* Xếp các phần tử theo chiều dọc */
+}
+#chart-container {
+  display: flex; /* Sử dụng flexbox cho layout */
+  justify-content: space-between; /* Phân phối các biểu đồ một cách đều */
+  margin-top: 20px; /* Thêm khoảng cách phía trên container */
+}
+
+.piechart {
+  flex: 1; /* Mỗi biểu đồ chiếm phần bằng nhau của container */
+  max-width: 500px; /* Giới hạn chiều rộng tối đa của biểu đồ */
+  height: auto; /* Cho phép biểu đồ tự động tính toán chiều cao dựa trên chiều rộng */
+  border-radius: 5px; /* Góc bo tròn cho biểu đồ */
+  margin-right: 20px; /* Khoảng cách giữa các biểu đồ */
+}
+
+.row {
+  display: flex; /* Sử dụng flexbox cho layout hàng */
+  justify-content: space-around; /* Phân phối các cột một cách đều */
+  margin-bottom: 20px; /* Thêm khoảng cách phía dưới hàng */
+}
+
+.col {
+  background-color: #fff; /* Màu nền nhạt */
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bóng nhẹ */
+  padding: 20px;
+  text-align: center;
+  margin: 20px;
+}
+.col a i {
+  font-size: 50px; /* Điều chỉnh kích thước font khi cần thiết */
+  color: #333; /* Xem xét sử dụng màu sắc của chủ đề */
+}
+.count-student p,
+.count-teacher p,
+.count-class p {
+  font-weight: bold;
+  font-size: 20px; /* Điều chỉnh kích thước font khi cần thiết */
+  margin-top: 10px;
+}
+
+.nav-search {
+  position: fixed; /* Đặt phần tử cố định */
+  top: 0; /* Căn trên cùng */
+  left: 50%; /* Căn giữa theo chiều ngang */
+  transform: translateX(-50%); /* Dịch chuyển phần tử để căn giữa chính xác */
+  z-index: 1000; /* Đảm bảo phần tử nằm trên các phần tử khác */
+  width: 100%; /* Để phần tử rộng hết chiều ngang màn hình */
+  max-width: 600px; /* Giới hạn độ rộng tối đa của phần tử */
+  background-color: white; /* Đặt nền trắng cho phần tử (tùy chọn) */
+  padding: 10px; /* Khoảng cách bên trong phần tử */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Tạo đổ bóng nhẹ (tùy chọn) */
+}
+
+.nav-search form {
+  display: flex; /* Đặt các phần tử trong form thành một hàng ngang */
+  justify-content: space-between; /* Căn các phần tử trong form */
+  align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+}
+
+.nav-search select,
+.nav-search input[type="search"],
+.nav-search button {
+  margin-right: 10px; /* Khoảng cách giữa các phần tử */
+}
+
+.nav-search select {
+  flex: 0.5; /* Giãn phần tử để chiếm không gian hợp lý */
+}
+
+.nav-search input[type="search"] {
+  flex: 2; /* Giãn phần tử để chiếm không gian hợp lý */
+}
+
+.nav-search button {
+  flex: 0 0 auto; /* Giữ kích thước cố định cho nút */
+}
+
+.dropdown {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  max-height: 200px;
+  overflow-y: auto;
+  display: none; /* Ẩn dropdown ban đầu */
+  position: absolute;
+  width: calc(100% - 20px); /* Đảm bảo dropdown cùng độ rộng với form */
+}
+
+.dropdown a {
+  text-decoration: none;
+  color: #000000;
+  display: block;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.dropdown a:hover {
+  background-color: #f0f0f0;
+}

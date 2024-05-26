@@ -1,0 +1,268 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/styles.css">
+        <style>
+
+#content {
+    display: flex;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.timetable {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.day {
+    display: flex;
+    flex-direction: column;
+    background-color: #e6f7ff;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 10px;
+}
+
+.day-name {
+    background-color: #69c0ff;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.time-slot {
+    background-color: #bae7ff;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: #000;
+}
+
+.morning {
+    background-color: #d6e4ff;
+}
+
+.afternoon {
+    background-color: #ffccc7;
+}
+
+.course {
+    font-weight: bold;
+    color: #000;
+}
+
+.time-slot:hover {
+    background-color: #91d5ff;
+    cursor: pointer;
+}
+
+        </style>
+    </head>
+    <body>
+        <head>
+            <meta charset="UTF-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="viewport"
+                content="width=device-width, initial-scale=1.0" />
+            <title>Sidebars</title>
+            <link rel="stylesheet" href="styles copy.css" />
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link rel="preconnect" href="https://fonts.gstatic.com"
+                crossorigin />
+            <link
+                href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+                rel="stylesheet" />
+            <link
+                rel="stylesheet"
+                href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,0" />
+            <link
+                href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+                rel="stylesheet" />
+            <script src="https://unpkg.com/akar-icons-fonts"></script>
+            <style>
+            a{
+                text-decoration: none;
+            }
+        </style>
+        </head>
+        <body>
+            <div class="nav-conteiner">
+                <div class="user">
+                    <i class="fa-regular fa-user"></i>
+                    <p> Xin chào {{user}}</p>
+                </div>
+            </div>
+            <aside class="sidebar">
+                <header>
+                    <button
+                        type="button"
+                        className="sidebar-burger"
+                        onClick="toggleSidebar()">
+                        <i class="ai-three-line-horizontal"></i>
+                    </button>
+                    
+                </header>
+                <ul>
+                    <li>
+                        <a href="/giaovien">
+                            <button type="button" onclick="onClick(this)">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                <p>Thời khóa biểu</p>
+                            </button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/giaovien/blog/">
+                            <button type="button" onclick="onClick(this)">
+                                <i class="ai-dashboard"></i>
+                                <p>Quản lí Blog</p>
+                            </button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/giaovien/course">
+                            <button type="button" onclick="onClick(this)">
+                                <i class="fa-brands fa-discourse"></i>
+                                <p>Khóa học</p>
+                            </button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/giaovien/class">
+                            <button type="button" onclick="onClick(this)">
+                                <i class="fa-solid fa-landmark"></i>
+                                <p>Thông tin lớp học</p>
+                            </button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/giaovien/score">
+                            <button type="button" onclick="onClick(this)">
+                                <i class="fa-solid fa-pencil"></i>
+                                <p>Điểm thi</p>
+                            </button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/giaovien/attend">
+                            <button type="button" onclick="onClick(this)">
+                                <i class="fa-regular fa-calendar"></i>
+                                <p>Điểm danh</p>
+                            </button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/login/logout">
+                            <button type="button" onclick="onClick(this)">
+                                <i class="ai-lock-on"></i>
+                                <p>Đăng xuất</p>
+                            </button>
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+            <div id="content">
+
+            </div>
+            <script src="main.js"></script>
+        </body>
+
+    </html>
+
+    <script>
+ class Course {
+    constructor(name, startTime, days, room) {
+        this.name = name;
+        this.startTime = this.convertTimeStringToDate(startTime);
+        this.endTime = new Date(this.startTime.getTime() + (2 * 60 * 60 * 1000));
+        this.days = days;
+        this.room = room; // Thêm thông tin về phòng học
+    }
+
+    convertTimeStringToDate(timeString) {
+        const [hours, minutes, seconds] = timeString.split(':').map(Number);
+        const date = new Date();
+        date.setHours(hours, minutes, seconds);
+        return date;
+    }
+}
+
+// Danh sách các môn học với thông tin về phòng học
+const courses = [
+    {{#each results}}
+        new Course("{{this.nameclass}}", "{{this.giohoc}}", [{{this.buoihoc}}], "{{this.phong}}"),
+    {{/each}}
+];
+
+function printTimetable(timetable) {
+    for (let time in timetable) {
+        const { day, hour, course } = timetable[time];
+        const startTime = new Date(Number(time));
+        console.log(`Thứ ${day} - ${hour}:00 - ${hour + 1}:00: ${course} - ${course.room}`); // In thêm thông tin về phòng học
+    }
+}
+
+function generateTimetable(courses) {
+    const timetable = {};
+    courses.forEach(course => {
+        course.days.forEach(day => {
+            let startTime = course.startTime.getTime() + (day - 1) * 24 * 60 * 60 * 1000;
+            let endTime = startTime + (2 * 60 * 60 * 1000);
+            while (timetable[startTime]) {
+                startTime += (60 * 60 * 1000);
+                endTime += (60 * 60 * 1000);
+            }
+
+            for (let i = 0; i < 2; i++) {
+                timetable[startTime + (i * 60 * 60 * 1000)] = { day, hour: new Date(startTime + (i * 60 * 60 * 1000)).getHours(), course };
+            }
+        });
+    });
+    return timetable;
+}
+
+const timetable = generateTimetable(courses);
+
+function printTimetableSorted(timetable) {
+    const sortedTimetable = Object.values(timetable).sort((a, b) => {
+        if (a.day < b.day) return -1;
+        if (a.day > b.day) return 1;
+        if (a.hour < b.hour) return -1;
+        if (a.hour > b.hour) return 1;
+        return 0;
+    });
+
+    let htmlContent = '';
+let currentDay = null; // Biến để lưu trữ ngày hiện tại
+sortedTimetable.forEach(({ day, hour, course }) => {
+    if (day !== currentDay) { // Kiểm tra nếu ngày hiện tại khác với ngày trước đó
+        if (currentDay !== null) {
+            htmlContent += `</div>`; // Đóng thẻ div trước khi mở thẻ mới
+        }
+        htmlContent += `<div class="day" id="day${day}">`;
+        htmlContent += `<span class="day-name">Thứ ${day}</span>`;
+        currentDay = day; // Cập nhật ngày hiện tại
+    }
+    htmlContent += `<div class="time-slot">${hour}:00 - ${hour + 1}:00 <span class="course">${course.name}</span> <span class="course">Phòng ${course.room}</span></div>`;
+});
+
+htmlContent += `</div>`; // Đóng thẻ div cuối cùng
+
+    document.getElementById('content').innerHTML = htmlContent;
+}
+
+printTimetableSorted(timetable);
+
+
+</script>

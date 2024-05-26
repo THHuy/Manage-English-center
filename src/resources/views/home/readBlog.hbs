@@ -1,0 +1,153 @@
+<header>
+    <title>Trung tâm ngoại ngữ</title>
+    <link rel="stylesheet" href="/css/home.css">        <link rel="stylesheet" href="/css/footer.css">
+</header>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Trung tâm tiếng anh</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page"
+                        href="/"><i class="fa-solid fa-house" style="padding: 5px;"></i>Trang chủ </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/tuvan">Tư vấn lộ trình</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/lophoc">Lớp học</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/hoc-phi">Học phí</a>
+                </li>
+            </ul>
+        </div>
+        <a href="/login" class="btn btn-outline-success my-2 my-sm-0">Đăng nhập</a>
+    </div>
+</nav>
+<div class="img">
+    <img src="img/home/hoctienganhhome1" alt="" id="img-home">
+</div>
+
+<div id="blog">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+                <p class="text-center">BLOG</p>
+                {{#each blog}}
+                <div class="card mx-auto m-4" >
+                    <div class="card-body">
+                        <h5 class="card-title">{{this.title}}</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Người đăng: {{this.author}} </h6>
+                        <p class="card-text">{{this.content}}</p>
+                        <a href="/read/?id={{this.idblog}}" class="card-link">Đọc Thêm</a>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+            {{#each blogID}}
+            <div class="col-6">
+                    <h4 class="text-center">Thông báo</h4>
+                    <h2 class="text-start">{{this.title}}</h2>
+                    <h6 class="text-start">Người đăng: {{this.author}}</h6>
+                    <h6 class="text-start">Ngày đăng: <h6 class="text-start stringDate">{{this.created_at}}</h6></h6>
+                    <p class="text-start">{{this.content}}</p>
+            </div>
+            {{/each}}
+            <div class="col">
+                <p class="text-center">KHÓA HỌC</p>
+                 {{#each course}}
+                <div class="card mx-auto m-4" style="width: 14rem;">
+                    <a class="urlVideo" href="{{this.link}}"><img class="img-video card-img-top" src=""></img></a>
+                    <div class="card-body">
+                       <h5 class="card-title">{{this.title}}</h5>
+                        <p class="card-text overflow-auto">{{this.mota}}</p>
+                        <a href="{{this.link}}" class="btn btn-primary">Đi tới khóa học</a>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+<div class="footer">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <h2>Trung tâm tiếng anh</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Aut illo error voluptate ratione distinctio!
+                        Exercitationem expedita dolores harum eum, maiores
+                        explicabo mollitia ex quae, assumenda corrupti iste
+                        numquam eligendi qui!</p>
+                    <div class="social-links">
+                        <a href="#"><i
+                                class="ph-fill ph-instagram-logo"></i></a>
+                        <a href="#"><i
+                                class="ph-fill ph-twitter-logo"></i></a>
+                        <a href="#"><i
+                                class="ph-fill ph-tiktok-logo"></i></a>
+                        <a href="#"><i
+                                class="ph-fill ph-facebook-logo"></i></a>
+                    </div>
+                </div>
+
+                <div class="links">
+                    <p>Information</p>
+                    <a href class="link">Our Company</a>
+                    <a href class="link">About Us</a>
+                    <a href class="link">Blog</a>
+                </div>
+            </div>
+        </div>
+<script>
+    // Lấy mã video từ URL
+function extractVideoId(url) {
+    var startIndex = url.indexOf("?v=") + 3;
+    if (startIndex !== -1) {
+        var endIndex = url.indexOf("&", startIndex);
+        if (endIndex === -1) {
+            endIndex = url.length;
+        }
+        return url.substring(startIndex, endIndex);
+    }
+    return null;
+}
+
+// Thay đổi src của tất cả các video và hình ảnh img-video
+function changeSrcForAll() {
+    const url = document.querySelectorAll(".urlVideo")
+    var videoUrls = [];
+    url.forEach(e =>{
+        videoUrls.push(e.href)
+    })
+    var imgElements = document.querySelectorAll(".img-video");
+    imgElements.forEach(function(imgElement, index) {
+        var videoId = extractVideoId(videoUrls[index]);
+        if (videoId) {
+            imgElement.src = "http://img.youtube.com/vi/" + videoId + "/maxresdefault.jpg";
+        } else {
+            console.log("Không tìm thấy mã video trong URL.");
+        }
+    });
+
+    var videoElements = document.querySelectorAll(".video");
+    videoElements.forEach(function(videoElement, index) {
+        videoElement.src = "https://www.youtube.com/embed/" + extractVideoId(videoUrls[index]);
+    });
+}
+
+// Gọi hàm thay đổi src cho tất cả các video và hình ảnh
+changeSrcForAll();
+
+    
+</script>

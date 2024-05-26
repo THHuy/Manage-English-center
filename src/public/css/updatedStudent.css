@@ -1,0 +1,61 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Student Page Container */
+.student-page {
+  width: 500px;
+  margin: 50px auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+/* Form Section */
+.form {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+/* Form Title */
+.form h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Form Labels */
+.form p {
+  margin-bottom: 5px;
+  color: #666;
+  font-weight: bold;
+}
+
+/* Form Inputs */
+.form input,
+.form select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 15px;
+}
+
+/* Button Styles */
+.form button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Button Hover Effect */
+.form button:hover {
+  background-color: #0056b3;
+}

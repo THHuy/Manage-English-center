@@ -1,0 +1,207 @@
+<header>
+    <link rel="stylesheet" href="/css/course.css">
+    <style>
+        .card-text {
+  display: -webkit-box;
+  max-height: 3.2rem;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  -webkit-line-clamp: 2;
+  line-height: 1.6rem;
+}
+    </style>
+</header>
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sidebars</title>
+        <link rel="stylesheet" href="styles copy.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+            rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,0" />
+        <link
+            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet" />
+        <script src="https://unpkg.com/akar-icons-fonts"></script>
+        <style>
+            a{
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="nav-conteiner">
+            <div class="user">
+                <i class="fa-regular fa-user"></i>
+                <p> Xin chào {{user}}</p>
+            </div>
+        </div>
+        <aside class="sidebar">
+                <header>
+                    <button
+                        type="button"
+                        className="sidebar-burger"
+                        onClick="toggleSidebar()">
+                        <i class="ai-three-line-horizontal"></i>
+                    </button>
+                    
+                </header>
+                <ul>
+                    <li>
+                        <a href="/giaovien">
+                            <button type="button" onclick="onClick(this)">
+                                <i class="fa-solid fa-calendar-days"></i>
+                                <p>Thời khóa biểu</p>
+                            </button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/giaovien/blog/">
+                            <button type="button" onclick="onClick(this)">
+                                <i class="ai-dashboard"></i>
+                                <p>Quản lí Blog</p>
+                            </button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/giaovien/course">
+                            <button type="button" onclick="onClick(this)">
+                                <i class="fa-brands fa-discourse"></i>
+                                <p>Khóa học</p>
+                            </button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/giaovien/class">
+                            <button type="button" onclick="onClick(this)">
+                                <i class="fa-solid fa-landmark"></i>
+                                <p>Thông tin lớp học</p>
+                            </button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/giaovien/score">
+                            <button type="button" onclick="onClick(this)">
+                                <i class="fa-solid fa-pencil"></i>
+                                <p>Điểm thi</p>
+                            </button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/giaovien/attend">
+                            <button type="button" onclick="onClick(this)">
+                                <i class="fa-regular fa-calendar"></i>
+                                <p>Điểm danh</p>
+                            </button>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/login/logout">
+                            <button type="button" onclick="onClick(this)">
+                                <i class="ai-lock-on"></i>
+                                <p>Đăng xuất</p>
+                            </button>
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+
+        <div id="content">
+
+            <a href="/giaovien/addCourse" class="btn btn-primary">Thêm khóa
+                học</a>
+            <h1>Danh sách khóa học</h1>
+            <div class="infStudent">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr class="table-content">
+                            <th scope="col">STT</th>
+                            <th scope="col">Tên khóa học</th>
+                            <th scope="col">Mô tả</th>
+                            <th scope="col">Người đăng</th>
+                            <th scope="col">Chức năng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each course}}
+                        <tr class="table-data">
+                            <td>{{sum @index 1}}</td>
+                            <td>{{this.title}}</td>
+                            <td>{{this.mota}}</td>
+                            <td>{{this.author}}</td>
+                            <td>
+                                <a class="btn-updated"
+                                    href="/giaovien/Update-Course/?idcourse={{this.idcourse}}"><i
+                                        class="fa-solid fa-pen-to-square"
+                                        style="color: #74C0FC;"></i></a>
+                                <a data-id="{{this.idcourse}}"
+                                    class="btn-course"><i
+                                        class="fa-solid fa-trash"
+                                        style="color: #ff0000;"></i></a>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+            <form method="post" id="formDeletedCourse"></form>
+        </div>
+        <script src="main.js"></script>
+    </body>
+
+</html>
+<script>
+    // Lấy mã video từ URL
+function extractVideoId(url) {
+    var startIndex = url.indexOf("?v=") + 3;
+    if (startIndex !== -1) {
+        var endIndex = url.indexOf("&", startIndex);
+        if (endIndex === -1) {
+            endIndex = url.length;
+        }
+        return url.substring(startIndex, endIndex);
+    }
+    return null;
+}
+
+// Thay đổi src của tất cả các video và hình ảnh img-video
+function changeSrcForAll() {
+    const url = document.querySelectorAll(".urlVideo")
+    var videoUrls = [];
+    url.forEach(e =>{
+        videoUrls.push(e.href)
+    })
+    var imgElements = document.querySelectorAll(".img-video");
+    imgElements.forEach(function(imgElement, index) {
+        var videoId = extractVideoId(videoUrls[index]);
+        if (videoId) {
+            imgElement.src = "http://img.youtube.com/vi/" + videoId + "/maxresdefault.jpg";
+        } else {
+            console.log("Không tìm thấy mã video trong URL.");
+        }
+    });
+
+    var videoElements = document.querySelectorAll(".video");
+    videoElements.forEach(function(videoElement, index) {
+        videoElement.src = "https://www.youtube.com/embed/" + extractVideoId(videoUrls[index]);
+    });
+}
+
+// Gọi hàm thay đổi src cho tất cả các video và hình ảnh
+changeSrcForAll();
+
+    
+</script>
+<script src="/js/course/index.js"></script>

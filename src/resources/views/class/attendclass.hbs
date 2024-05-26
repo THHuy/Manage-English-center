@@ -1,0 +1,316 @@
+<header>
+    <link rel="stylesheet" href="/css/student.css">
+</header>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/scoreID.css">
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sidebars</title>
+        <link rel="stylesheet" href="styles copy.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+            rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,0" />
+        <link
+            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet" />
+        <script src="https://unpkg.com/akar-icons-fonts"></script>
+        <style>
+            a{
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="nav-conteiner">
+            <div class="user">
+                <i class="fa-regular fa-user"></i>
+                <p> Xin chào {{user}}</p>
+            </div>
+        </div>
+        <aside class="sidebar">
+                    <header>
+                        <button
+                            type="button"
+                            className="sidebar-burger"
+                            onClick="toggleSidebar()">
+                            <i class="ai-three-line-horizontal"></i>
+                        </button>
+                        <p class="navbar">Quản lí trung tâm</p>
+                    </header>
+                    <ul>
+                        <li>
+                            <a href="/quanli">
+                                <button type="button" onclick="onClick(this)">
+                                    <i class="ai-home-alt1"></i>
+                                    <p>Trang chủ</p>
+                                </button>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/blog">
+                                <button type="button" onclick="onClick(this)">
+                                    <i class="ai-dashboard"></i>
+                                    <p >Quản lí Blog</p>
+                                </button>
+                            </a>
+                        </li>
+                        <li>
+                            <button type="button" onclick="onClick(this)">
+                                <i class="ai-person"></i>
+                                <p>Học viên</p>
+                                <i class="ai-chevron-down-small"></i>
+                            </button>
+                            <div class="sub-menu">
+                                <ul>
+                                    <li>
+                                        <a href="/student"><button
+                                                type="button">Quản lí
+                                                học viên</button></a>
+                                    </li>
+                                    <li>
+                                        <a href="/student/reserve"><button
+                                                type="button">Bảo
+                                                lưu</button></a>
+                                    </li>
+                                    <li>
+                                        <a href="/student/advise">
+                                            <button type="button">Tư
+                                                vấn({{newcount}})</button>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <button type="button" onclick="onClick(this)">
+                                 <i class="fa-solid fa-landmark"></i>
+                                <p>Lớp học</p>
+                                <i class="ai-chevron-down-small"></i>
+                            </button>
+                            <div class="sub-menu">
+                                <ul>
+                                    <li>
+                                        <a href="/class/creatClass">
+                                            <button type="button">Tạo lớp học
+                                            </button>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/class/arrangenClass">
+                                            <button type="button">Xếp
+                                                lớp</button>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/class">
+                                            <button type="button">Thông tin lớp
+                                                học</button>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/class/score">
+                                            <button type="button">Điểm
+                                                thi</button>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/class/changeClass">
+                                            <button type="button">Chuyển
+                                                lớp</button>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/class/attend">
+                                            <button type="button">Điểm
+                                                danh</button>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <button type="button" onclick="onClick(this)">
+                                <i class="ai-person"></i>
+                                <p>Giáo viên</p>
+                                <i class="ai-chevron-down-small"></i>
+                            </button>
+                            <div class="sub-menu">
+                                <ul>
+                                    <li>
+                                        <a href="/teacher">
+                                            <button type="button">Quản lí giáo
+                                                viên</button>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/teacher/division">
+                                            <button type="button">Phân
+                                                công</button>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="/course/listCourse">
+                                <button type="button" onclick="onClick(this)">
+                                    <i class="fa-brands fa-discourse"></i>
+                                    <p>Khóa học</p>
+                                </button>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/fee">
+                                <button type="button" onclick="onClick(this)">
+                                    <i class="fa-solid fa-money-bill"></i>
+                                    <p>Học phí</p>
+                                </button>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/login/logout">
+                                <button type="button" onclick="onClick(this)">
+                                    <i class="ai-lock-on"></i>
+                                    <p>Đăng xuất</p>
+                                </button>
+                            </a>
+                        </li>
+                    </ul>
+                </aside>
+
+        <div id="content">
+            {{#each results}}
+            <div class="class-info">
+                <div class="class-info-row">
+                    <div class="class-info-item">
+                        <span class="class-info-label">Mã lớp:</span>
+                        <span class="class-info-value"
+                            id="idClass">{{this.id}}</span>
+                    </div>
+                    <div class="class-info-item">
+                        <span class="class-info-label">Tên lớp:</span>
+                        <span
+                            class="class-info-value">{{this.nameclass}}</span>
+                    </div>
+                    <div class="class-info-item">
+                        <span class="class-info-label">Kỹ năng:</span>
+                        <span class="class-info-value">{{this.skill}}</span>
+                    </div>
+                </div>
+                <div class="class-info-row">
+                    <div class="class-info-item">
+                        <span class="class-info-label">Phòng:</span>
+                        <span class="class-info-value">{{this.phong}}</span>
+                    </div>
+                    <div class="class-info-item">
+                        <span class="class-info-label">Ngày bắt đầu
+                            học:</span>
+                        <span
+                            class="class-info-value">{{this.ngayhoc}}</span>
+                    </div>
+                    <div class="class-info-item">
+                        <span class="class-info-label">Số buổi học trên
+                            tuần:</span>
+                        <span class="class-info-value">3
+                            Buổi/Tuần({{this.buoihoc}})</span>
+                    </div>
+                </div>
+                <div class="class-info-row">
+                    <div class="class-info-item">
+                        <span class="class-info-label">Giáo viên đảm
+                            nhiệm:</span>
+                        <span
+                            class="class-info-value">{{this.fullname}}</span>
+                    </div>
+                    <div class="class-info-item">
+                        <span class="class-info-label">Giờ học:</span>
+                        <span
+                            class="class-info-value">{{this.giohoc}}</span>
+                    </div>
+                    <div class="class-info-item">
+                        <span class="class-info-label">Số lượng học viên
+                            trong lớp:</span>
+                        <span
+                            class="class-info-value">{{this.total_students}}</span>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+            <div class="infStudent">
+                {{!-- Danh sách học viên --}}
+                <h1>Danh sách học viên</h1>
+                <div class="infStudent">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr class="table-content">
+                                <th scope="col">Mã học viên</th>
+                                <th scope="col">Tên học viên</th>
+                                <th scope="col">Có mặt</th>
+                                <th scope="col">Vắng không phép</th>
+                                <th scope="col">Vắng có phép</th>
+                                <th scope="col">Điểm danh</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <form id="attend-student" method="post">
+                                <div>
+                                    <p>Chọn ngày để điểm danh:</p>
+                                    <input type="date" name="dateAttend"
+                                        id="date-attend">
+                                </div>
+                                {{#each student}}
+                                <tr class="table-data">
+                                    <td>{{this.mahv}}
+                                        <input type="hidden" name="mahv"
+                                            value="{{this.mahv}}">
+                                    </td>
+                                    <td>{{this.fullname}}</td>
+                                    <td>
+                                        {{this.present}}
+                                    </td>
+                                    <td>
+                                        {{this.absent}}
+                                    </td>
+                                    <td>
+                                        {{this.permission}}
+                                    </td>
+                                    <td>
+                                        <select class="attendance_status"
+                                            name="attendance_status"
+                                            required>
+                                            <option value="0">Có
+                                                mặt</option>
+                                            <option value="1">Vắng
+                                                mặt</option>
+                                            <option value="2">Vắng có
+                                                phép</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-success"
+                            id="btn-score">Lưu</button>
+                    </div>
+                </form>
+            </div>
+
+            <script src="main.js"></script>
+        </body>
+
+    </html>
+    <script src="/js/class/attend.js"></script>
